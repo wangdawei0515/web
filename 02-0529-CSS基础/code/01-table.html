@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 200px;
+            height: 100px;
+            /*
+            collapse 边框合并，如果相邻的话，共用一个框
+            separate 默认值，边框分开，不合并
+            */
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>class</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20</td>
+                <td colspan="2">保密</td>
+                <!--<td>16</td>-->
+            </tr>
+            <tr>
+                <td rowspan="2">21</td>
+                <td>郭校歌</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <!--<td>21</td>-->
+                <td>三花</td>
+                <td>18</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

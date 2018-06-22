@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            width: 200px;
+            margin: 50px;
+            border: 1px dashed red;
+        }
+        #box ul{
+            width: 100%;
+            height: 31px;
+            overflow: hidden;
+        }
+        #box ul.show{
+            height: auto;/*高度由内容撑开*/
+        }
+        #box ul li{
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            background: #c4ff7b;
+            color: blue;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #box ul li.title{
+            height: 31px;
+            font-size: 14px;
+            background: #ffa31e;
+            line-height: 31px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="show">
+            <li class="title">学员</li>
+            <li>胡乾鹏</li>
+            <li>邢欢</li>
+            <li>舒展</li>
+        </ul>
+        <ul>
+            <li class="title">老师</li>
+            <li>which</li>
+            <li>lucky</li>
+            <li>maiya</li>
+        </ul>
+        <ul>
+            <li class="title">水果</li>
+            <li>苹果</li>
+            <li>栗子</li>
+        </ul>
+    </div>
+    <script>
+        var aUl = document.getElementsByTagName("ul");
+        var len = aUl.length;
+        var first = 0;
+        // alert(len);
+        for(var i = 0 ; i < len ; i ++){
+            aUl[i].index = i;
+            aUl[i].onclick = function () {
+                aUl[first].className = "";
+                first = this.index;
+                aUl[first].className = "show";
+            }
+        }
+    </script>
+</body>
+</html>

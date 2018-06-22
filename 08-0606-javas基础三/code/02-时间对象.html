@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var data = new Date();
+        console.log(data);
+        var strap = data.getTime();
+        // alert(strap);
+        var year = data.getFullYear();
+        var month = data.getMonth()+1;//获取月份 取值为0~11之间的整数
+        var date = data.getDate();//获取周几 取值为0~6之间的整数
+        var hour = data.getHours();
+        var min = data.getMinutes();
+        var sec = data.getSeconds();
+        document.body.innerHTML = year + "年"+ month + "月"+ date + "日"+ hour+ "时"+ min+ "分"+ sec+ "秒";
+    </script>
+</body>
+</html>

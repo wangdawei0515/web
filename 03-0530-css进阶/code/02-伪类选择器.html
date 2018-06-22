@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*LoVeHAte*/
+        a:link{/*link 未被点击的链接*/
+            color: blueviolet;
+        }
+        a:visited{/*已被点击的链接*/
+            color: blue;
+        }
+        a:hover {/*鼠标悬停其上的元素  这个一定要掌握*/
+            color: red;
+            background: aqua;
+            font-size: 20px;
+            /*cursor: pointer; 手指*/
+            /*cursor: default; 箭头*/
+            /*cursor: wait; 等待*/
+            /*cursor: help;帮助*/
+         }
+        a:active{/*鼠标已经再其上按下但是还没有释放的元素*/
+            color: yellowgreen;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background: aqua;
+        }
+
+        /*改变的是div本身*/
+        /*!*div:hover{*! */
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: bisque;*/
+        /*}*/
+        p{
+            width: 20px;
+            height: 20px;
+            background: red;
+            display: none;
+        }
+        /*改变的是div的后代 p元素*/
+        div:hover p{
+            width: 30px;
+            height: 30px;
+            background: blue;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">去百度</a>
+    <div>
+        <p></p>
+    </div>
+</body>
+</html>

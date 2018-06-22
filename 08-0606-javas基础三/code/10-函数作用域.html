@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        javascript解析顺序
+            1.（定义）先解析var function 参数
+                a.该步骤的var只定义变量，后面的=赋值不解析
+                b.该步骤的函数只定义函数，函数的执行不解析
+                c.重名的只留一个，var 和 函数重名  函数优先
+            2.（执行）再从上至下执行其他代码
+
+            作用域：
+                作用：读写
+                域：范围，区域
+            解析：
+                从上至下
+                    1 找 var 定义函数 参数
+                    2 执行
+         */
+        // alert(a);
+        // var a = 10;
+        // alert(a);
+        /*
+        1 找
+            a = undefined;  ===> a = 10;
+        2 执行
+            alert(a); ===>und
+            a = 10;
+            alert(a); ===> 10
+         */
+
+        // alert(a);
+        // function a() {
+        //     alert(1);
+        // }
+        // a();
+        // alert(a);
+        /*
+        1 找
+            a = function a() {
+                    alert(1);
+                }
+        2 执行
+            alert(a);  ===>函数块
+            a();函数调用 是新的作用域 只要是作用域 解析时就要分两步
+                1 找
+                2 执行
+                    alert(1);
+            alert(a); ===>函数块
+         */
+
+        // var a = 1;
+        // function fn() {
+        //     alert(2);
+        //     var a = 3;
+        // }
+        // fn();
+        // alert(a);
+        /*
+        1 找
+            a = und;===》a = 1;
+            fn = function fn() {
+                    alert(2);
+                    var a = 3;
+                }
+        2 执行
+            a = 1;
+            fn();
+                1 找
+                    a = und; ===》a = 3;
+                2 执行
+                    alert(2); ===》2
+                    a = 3;
+             alert(a); === > 1
+         */
+
+        var a = 1;
+        function fn() {
+            alert(2);
+            a = 3;
+        }
+        fn();
+        alert(a);
+        /*
+        1 找
+            a = und; ===》a = 1;===》a = 3;
+            fn = function fn() {
+                    alert(2);
+                    a = 3;
+                }
+        2 执行
+            a = 1;
+            fn();
+                1 找
+                2 执行
+                      alert(2);===》2
+                      a = 3;此函数没有的话 会从里往外找 去父级作用域
+            alert(a); === > 3
+         */
+    </script>
+</body>
+</html>

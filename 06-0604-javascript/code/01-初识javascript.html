@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        //如果script里面涉及到操作后面的元素，而又非得把script放在前面的话，需要加上：
+        window.onload = function () {
+            console.log("我是head里面的4");
+            //这里再写代码（意思是：当整个页面加载完成之后，再执行这里的代码）
+        }//一个页面中只能出现一次window.onload
+    </script>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <script src="index.js"></script>
+    <script>
+        /*
+        1.JavaScript 是一种脚本语言，是一种动态类型、弱类型
+        2.JavaScript通常用来操作HTML页面的
+           html骨架(页面结构)，css是样式(元素大小、颜色、位置、隐藏或显示等)，js是行为(部分动画效果、页面与用户交互等)
+
+       JS代码写在哪里：
+           script标签里面
+           写在外部.js后缀文件里面，通过script标签引入
+           写在标签里面
+       注意：在引入js文件的script里面，一定不能再写js代码
+           标签里面写js代码一般情况下不推荐(指行内的样式)
+
+        script标签的位置：
+           head或者body里面
+           要注意是否需要加上window.onload
+           如果说没有什么特别的要求，一般script标签放在body结束之前
+       */
+
+        /*多行注释*/
+    //    单行注释
+    //     alert("同学们 大家晚上好");//弹窗  用来调试代码
+        console.log("同学们 大家晚上好1");//弹窗  用来调试代码
+        console.log("调试代码2");//打印 用来调试代码
+    </script>
+</body>
+</html>

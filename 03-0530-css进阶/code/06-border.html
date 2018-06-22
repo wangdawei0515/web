@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         /*
+盒子模型
+盒子是由内容(content)、内边距(padding)、外边距(margin)、边框(border)组成的
+*/
+
+        /*
+        border:边框 类型 颜色;
+        border-width
+        border-style solid实线 dashed虚线 dotted点线 double双边框
+        border-color
+        一个值的时候： 代表四个方向值一样 上右下左（顺时针）
+        二个值的时候： 上下  右左
+        三个值的时候： 上 右左 下
+        四个值的时候： 上  右 下 左
+
+        border-width 边框大小
+        border-top-width 上边框大小
+        border-right-width 右边框大小
+        border-bottom-width 下边框大小
+        border-left-width 左边框大小
+        border-top-width:0
+
+        border-style 边框样式
+        border-top-style  顶部边框类型
+        border-right-style 右边边框类型
+        border-bottom-style 底部边框类型
+        border-left-style 左边边框类型
+
+        border-color 边框颜色
+        border-top-color  顶部边框颜色
+        border-right-color 右边边框颜色
+        border-bottom-color 底部边框颜色
+        border-left-color 左边边框颜色
+         */
+        div{
+            width: 150px;
+            height: 250px;
+            /*border: 10px solid red;*/
+            border-width: 5px 10px 15px 20px;
+            border-style: solid dotted dashed double;
+            border-color: red blue aqua fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

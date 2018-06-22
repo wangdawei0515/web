@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>00001</p>
+        <p>00002</p>
+        <p>00003</p>
+        <p>00004</p>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $("#box p").each(function (i) {  //第一个参数默认是序号/小标
+            // this.innerHTML = "我是第"+i+"个小阔爱";
+            $(this).html("我是第"+i+"个小阔爱");
+        })
+    </script>
+</body>
+</html>

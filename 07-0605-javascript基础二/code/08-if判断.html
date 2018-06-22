@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        if ==> 布尔值
+        判断符
+            > < >= <= == != !== ===
+            ==   只判断值是否一样 "5"==5
+            ===  不仅仅判断值，还判断类型是否一样 "5" === 5
+        当if的条件 运算完后不是布尔值的时候 会被强制性的转换为布尔值
+        哪些值，在转换为布尔值的时候为false
+            0         number
+            false     boolean
+            ""        string
+            null      object/null
+            undefined undefined
+            NaN       number
+
+            NaN :Not a Number   number类型
+                 一般在非法运算的时候才会 出现NaN
+             isNaN(参数) 非常讨厌数字
+                首先尽量把参数转换成数字，然后
+                    当参数是 数字，返回 false
+                    当参数不是数字，返回 true
+
+            在if里面，能用布尔值做条件判断的时候，不要用其他的来代替，因为强制数据类型的转换需要耗费时间
+        在两个值比较的时候，能用三等判断的时候，就用三等判断
+         */
+
+        // if(" "){
+        //     alert("真");//条件为真的时候执行
+        // }else{
+        //     alert("假");//条件为假的时候执行
+        // }
+
+
+        //当真语句只有一行的时候，可以去掉大括号，还可以直接写在条件的后面
+        // if(9>8){
+        //     alert("zhen");
+        // }
+
+        // if(9>8) alert("zhen");
+
+         //真语句一行，假语句一行  三目运算
+        // 9<8?alert("true"):alert("false");//条件?真语句:假语句;
+
+        //当三目的真假语句都是给同一个变量赋值的时候，可以更近一步简写
+        // 5>3?a=5:a=3;
+        // a=5<3?5:3;
+        // alert(a);
+
+        var x = 10;
+        if(x>20){
+            alert(">20");
+        }else if(x>15){
+            alert(">15");
+        }else if(x>=10){
+            alert(">=10")
+        }else{
+            alert("<10");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>我是一直存在的p</p>
+    </div>
+    <b id="box1">我是外面的b标签</b>
+    <script src="jquery.js"></script>
+    <script>
+     /*
+       添加子元素 可以是标签、文本、js对象、jq对象
+         append
+         prepend
+
+         appendTo
+         prependTo
+        */
+     // $("#box").append("<em>我是新加的1</em>");
+     // $("#box").prepend("<em>我是新加的2</em>");
+     //    $("<em>我是新加的2</em>").appendTo($("#box"));
+
+        var oBox1 = document.getElementById("box1");
+        // $("#box").append($(oBox1));
+        $("#box").append(oBox1);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        setTimeout(function () {//延迟定时器 1000毫秒后执行一次且只执行一次
+            console.log(1)
+        },1000);//1000=1s
+
+        setInterval(function () {//隔1000毫秒一直不停地 在执行
+            console.log(2);
+        },1000);
+
+        /*setTimeout(函数，时间)*/
+
+        function fn() {
+            console.log(3);
+        }
+        setTimeout(fn,2000);
+    </script>
+</body>
+</html>

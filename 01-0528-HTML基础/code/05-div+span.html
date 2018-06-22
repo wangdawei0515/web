@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            /*display: block;*/
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            background: yellowgreen;
+        }
+        div{
+            /*display: inline;*/
+            display: inline-block;
+            /*width: 300px;*/
+            /*height: 30px;*/
+            background: antiquewhite;
+        }
+        p{
+            width: 200px;
+            height: 150px;
+            background: aqua;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>同学们 晚上好</div>
+    <div>同学们 晚上好</div>
+    <div>同学们 晚上好</div>
+    <div></div>
+    <span>同学们 晚上好 123</span>
+    <span>同学们 晚上好</span>
+    <span>同学们 晚上好</span>
+    <p>
+        <span>ahhh</span>
+    </p>
+<!--
+    块级元素div  display:block;
+    可以包含任何块和行内元素
+    独占一行，支持设置宽高
+    如果没有设置宽高，高度由内容撑开，宽度默认浏览器宽度
+    没有内容，在网页上肉眼看不到东西，但是审查元素，宽度是浏览器宽度，高度0
+
+    行内（内联）元素span   display:inline;
+    可以和其他行内元素位于同一行
+    行内元素不要包块级元素
+    不支持设置宽高
+     内容撑开宽高
+
+     行内块元素  display:inline-block;
+     块级元素可以横排展示
+     行内元素可以设置宽高
+     元素既能设置宽高 也能排在一排
+
+     display:none
+      隐藏元素,包括他的子标签，在页面中不占位置，等同于消失了
+    -->
+</body>
+</html>

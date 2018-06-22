@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*导航条*/
+        div.nav{
+            width: 1226px;
+            height: 40px;
+            background: #333333;
+            margin: auto;
+            position: relative;
+        }
+        div.nav .left {
+            position: absolute;
+            left: 0;
+        }
+        div.nav .left li,div.nav .right li{
+            line-height: 40px;
+            font-size: 14px;
+            float: left;
+        }
+        div.nav .left li a,div.nav .right li a{
+            color: #ccc;
+            font-size: 12px;
+        }
+        div.nav .left li a:hover{
+            cursor: pointer;
+            color: #fff;
+        }
+        div.nav .left li span,div.nav .right li span{
+            padding: 0 5px;
+        }
+        div.nav .right{
+            position: absolute;
+            right: 0;
+        }
+        div.nav .right li.shop-car{
+            width: 120px;
+            text-align: center;
+            background: #cccccc;
+            margin-left: 50px;
+        }
+        /*内容*/
+        div.con{
+            width: 1226px;
+            height: 100px;
+            margin: auto;
+            position: relative;
+        }
+        div.con .left{
+            margin-top: 27px;
+        }
+        div.con .middle{
+            position: absolute;
+            top: 15px;
+            left: 245px;
+            overflow: hidden;
+        }
+        div.con .middle li{
+            float: left;
+            margin-right: 20px;
+        }
+        div.con .middle li a{
+            font-size: 14px;
+            color: #333333;
+        }
+        div.con .middle li a:hover{
+            color: #ffa31e;
+        }
+        div.con .right{
+            width: 245px;
+            height: 50px;
+            border: 1px solid #ddd;
+            position: absolute;
+            right: 50px;
+            top: 0;
+        }
+        div.con .right div.input{
+            margin-left: 130px;
+            line-height: 50px;
+        }
+        div.con .right div.input a{
+            font-size: 12px;
+            background: #c4ff7b;
+            padding: 0 3px;
+        }
+        div.con .right div.search{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-left: 0;
+            position: absolute;
+            right: -50px;
+            top: -1px;
+        }
+        /*轮播图*/
+        div.wrap{
+            width: 1226px;
+            height: 460px;
+            border: 1px solid red;
+            position: relative;
+            margin: auto;
+        }
+        div.wrap .img li{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        div.wrap .tab{
+            overflow: hidden;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        div.wrap .tab li{
+            float: left;
+            width: 6px;
+            height: 6px;
+            border: 2px solid #aaa;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        div.wrap .tab li span{
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        div.wrap .tab li span.on{
+            background: #ffa31e;
+        }
+        div.wrap .btn li{
+            width: 50px;
+            height: 70px;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            line-height: 70px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        div.wrap .btn li.left{
+            left: 234px;
+        }
+        div.wrap .btn li.right{
+            right: 0;
+        }
+        div.wrap .list{
+            width: 234px;
+            padding: 20px 0;
+            background: #cccccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        div.wrap .list li{
+            height: 42px;
+            line-height: 42px;
+        }
+        div.wrap .list li a{
+            color: #fff;
+            display: block;
+            padding-left: 20px;
+        }
+        div.wrap .list li a:hover{
+            background: #ffa31e;
+        }
+        div.wrap .list li a b{
+            position: absolute;
+            left: 200px;
+        }
+        div.wrap .list li.item1 div{
+            height: 460px;
+            width: 744px;
+            background: #c4ff7b;
+            position: absolute;
+            left: 234px;
+            top: 0;
+            overflow: hidden;
+            display: none;
+        }
+        div.wrap .list li.item1:hover div{
+            display: block;
+        }
+        div.wrap .list li.item1 div ul{
+            padding-top: 6px;
+            height: 460px;
+            width: 248px;
+            background: #ddd;
+            float: left;
+        }
+        div.wrap .list li.item1 div ul li{
+            height: 76px;
+            line-height: 76px;
+            font-size: 14px;
+        }
+        div.wrap .list li.item1 div ul li a:hover{
+            background: none;
+            color: #ffa31e;
+        }
+        div.wrap .list li.item1 div ul li img{
+            vertical-align: middle;
+        }
+        div.wrap .list li.item1 div ul li a{
+            display: inline;
+        }
+        div.wrap .list li.item1 div ul li a span{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--导航条-->
+    <div class="nav">
+        <ul class="left">
+            <li><a href="">小米商城</a><span>|</span></li>
+            <li><a href="">MIUI</a><span>|</span></li>
+            <li><a href="">IoT</a><span>|</span></li>
+            <li><a href="">云服务</a><span>|</span></li>
+            <li><a href="">小爱开放平台</a><span>|</span></li>
+            <li><a href="">金融</a><span>|</span></li>
+            <li><a href="">金融</a><span>|</span></li>
+            <li><a href="">政企服务</a><span>|</span></li>
+            <li><a href="">Select Region</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="">登录</a><span>|</span></li>
+            <li><a href="">注册</a><span>|</span></li>
+            <li><a href="">消息通知</a></li>
+            <li class="shop-car">购物车（<span>0</span>)</li>
+        </ul>
+    </div>
+    <!--内容-->
+    <div class="con">
+        <div class="left"><img src="img/QQ截图20180601203124.png" alt=""></div>
+        <div class="middle">
+            <ul>
+                <li><a href="">小米手机</a></li>
+                <li><a href="">红米</a></li>
+                <li><a href="">电视</a></li>
+                <li><a href="">笔记本</a></li>
+                <li><a href="">盒子</a></li>
+                <li><a href="">新品</a></li>
+                <li><a href="">路由器</a></li>
+                <li><a href="">智能硬件</a></li>
+                <li><a href="">服务</a></li>
+                <li><a href="">社区</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="input">
+                <a href="">小米8</a>
+                <a href="">618主会场</a>
+            </div>
+            <div class="search"></div>
+        </div>
+    </div>
+    <!--轮播-->
+    <div class="wrap">
+        <ul class="img">
+            <li>
+                <img src="http://i1.mifile.cn/a4/xmad_15277768869432_EZBoe.jpg" width="1226" height="460">
+            </li>
+        </ul>
+        <ul class="tab">
+            <li><span class="on"></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+        <ul class="btn">
+            <li class="left">&lt;</li>
+            <li class="right">&gt;</li>
+        </ul>
+        <ul class="list">
+            <li class="item1">
+                <a href="">手机 电话卡<b>&gt;</b></a>
+                <div>
+                    <ul>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                    </ul>
+                    <ul>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                    </ul>
+                    <ul>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                        <li><a href=""><img src="http://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" width="40" height="40"><span>小米8</span></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">电视 盒子<b>&gt;</b></a></li>
+            <li><a href="">笔记本<b>&gt;</b></a></li>
+            <li><a href="">智能 家电<b>&gt;</b></a></li>
+            <li><a href="">健康 家居<b>&gt;</b></a></li>
+            <li><a href="">出行 儿童<b>&gt;</b></a></li>
+            <li><a href="">路由器手机配件<b>&gt;</b></a></li>
+            <li><a href="">移动电源 插线板<b>&gt;</b></a></li>
+            <li><a href="">耳机 音箱<b>&gt;</b></a></li>
+            <li><a href="">生活 米兔<b>&gt;</b></a></li>
+        </ul>
+    </div>
+</body>
+</html>

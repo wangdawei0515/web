@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FormPage</title>
+  <style>
+    .form {
+      width: 400px;
+      margin: 20px auto;
+    }
+
+    .form-item {
+      margin-top: 20px;
+    }
+
+    label.label-item {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+    }
+
+    input[type='radio'], input[type='checkbox'] {
+      vertical-align: -2px;
+    }
+
+    textarea[name="personal"] {
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+<!--
+form  两个比较重要属性
+  name  ===> 后台会根据 name 来获取值
+  value ===> 用户输入值
+
+  /reg?
+  name = value
+  username=w&
+  password=123&
+  gender=male&
+  hobby=code&
+  address=3&
+  personal=qq
+-->
+<form action="/reg" class="form" method="post" >
+  <div class="form-item">
+    <label for="username" class="label-item">用户名：</label>
+    <input type="text" name="uName" placeholder="请输入用户名" id="username">
+  </div>
+  <div class="form-item">
+    <label for="password" class="label-item">密码：</label>
+    <input type="password" name="password" placeholder="请输入密码" id="password">
+  </div>
+  <div class="form-item">
+    <label class="label-item">性别：</label>
+    <label for="male">男</label>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="female">女</label>
+    <input type="radio" name="gender" value="female" id="female">
+    <label for="secret">保密</label>
+    <input type="radio" name="gender" value="secret" id="secret">
+  </div>
+  <div class="form-item">
+    <label class="label-item">爱好：</label>
+    <label for="coding">coding</label>
+    <input type="checkbox" name="hobby" value="code" id="coding">
+    <label for="read">阅读</label>
+    <input type="checkbox" name="hobby" value="read" id="read">
+    <label for="game">游戏</label>
+    <input type="checkbox" name="hobby" value="game" id="game">
+    <label for="sleep">睡觉</label>
+    <input type="checkbox" name="hobby" value="sleep" id="sleep">
+  </div>
+  <div class="form-item">
+    <label for="address" class="label-item">地址：</label>
+    <select name="address" id="address">
+      <option value="0">--请选择--</option>
+      <option value="1">北京</option>
+      <option value="2">深圳</option>
+      <option value="3">杭州</option>
+      <option value="4">长沙</option>
+    </select>
+  </div>
+  <div class="form-item">
+    <label for="personal" class="label-item">个人简介：</label>
+    <textarea name="personal" id="personal" style="resize: none;"></textarea>
+  </div>
+  <div class="form-item">
+    <input type="submit" value="提交" class="btn btn-success">
+    <input type="reset" value="重置" class="btn btn-warning">
+  </div>
+</form>
+</body>
+</html>

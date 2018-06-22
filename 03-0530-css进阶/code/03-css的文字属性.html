@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*font-family 字体类型浏览器默认的字体是微软雅黑，字体中有多个字体的时候，如果前面的字体没有就使用后面的字体*/
+        .box1{
+            font-family: Algerian,"宋体";
+        }
+
+         /*
+       font-size   字体大小
+           单位 px rem % em
+           px   谷歌浏览器默认字体大小16px,最小是12px
+           rem  相对于html(根标签)的字体大小
+           em   等于父级的字体尺寸——相对于父级字体大小而言的
+           %    相对于父容器中字体的%调整  这个要知道
+       */
+        .box2{
+            font-size: 20px;
+        }
+        .box3{
+            font-size: 12px;
+        }
+        .box4{
+            font-size: 2rem;
+        }
+        #box{
+            font-size: 30px;
+        }
+        #box div{
+            /*font-size: 2em;*/
+            font-size: 50%;
+        }
+
+        /*
+        font-weight 字体粗细
+        关键字
+            normal 默认字体
+            lighter 较细
+            bold 加粗   这个要知道
+            bolder 很粗
+        给值
+            只能100-900的整百数
+            400相当于正常的
+            700相当于bold
+        */
+        .box5{
+            font-weight: bold;
+        }
+        .box6{
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        /*
+         font-style  字体类型
+         normal 默认 文字正常
+         italic  文字斜体（属性）
+         oblique  文字斜体
+     */
+        /*
+        color  文字颜色
+        关键字
+            英文单词  red green
+        16进制（0-9 a-f）
+            #5544aa  #54a #abd456
+            #dddddd  #ddd
+        rgb(0-255,0-255,0-255)
+            r red
+            g green
+            b blue
+        rgba(0-255,0-255,0-255,0-1)
+            r red
+            g green
+            b blue
+            a alpha(透明度)
+                0 完全透明
+                1 完全不透明
+        */
+        .box7{
+            /*color: aqua;*/
+            color: rgb(224, 62, 69);
+        }
+        .box8{
+            /*color: #222add;*/
+            color: rgba(224, 62, 69,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">hello 001 abc</div>
+    <div class="box2">hello 001 abc</div>
+    <div class="box3">hello 001 abc</div>
+    <div class="box4">hello 001 abc</div>
+    <div class="box5">hello 001 abc</div>
+    <div class="box6">hello 001 abc</div>
+    <div class="box7">hello 001 abc</div>
+    <div class="box8">hello 001 abc</div>
+    <div id="box">
+        <div>hello 001 abc</div>
+    </div>
+</body>
+</html>

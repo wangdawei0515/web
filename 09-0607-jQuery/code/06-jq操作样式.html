@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #18ffd5;
+            margin: 50px;
+            padding: 30px;
+            border: 10px solid red;
+            position: relative;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: #212529;
+            position: absolute;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1"></div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        /*
+           .css()
+           .width()
+           .height()
+
+           innerWidth() / innerHeight 算了padding
+           outerWidth() / outerHeight 算了 padding+border
+
+            offset()
+              该对象有top /left 属性
+              代表到浏览器窗口的 top/left的值
+
+            position()
+              该对象有top /left 属性
+              代表到定位父级的 top/left的值
+            */
+
+        var $box = $("#box");
+        // alert($box.width());
+        // alert($box.height());
+        // $box.css("width","200px");//oBox.style.width = "200px"
+
+        // $box.css({
+        //     "width" : "200px",
+        //     "height": "200px",
+        //     "background" : "blue"
+        // });
+
+        // alert($box.innerWidth());
+        // alert($box.outerWidth());
+
+        // alert($box.offset().top);
+        // alert($("#box1").offset().top);
+
+        alert($("#box1").position().top);
+    </script>
+</body>
+</html>

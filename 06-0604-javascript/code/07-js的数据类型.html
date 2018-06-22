@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /*
+    js六大数据类型
+    number——数字  在js里面的小数和整数统一都是数字 -2^53 -- 2^53 超出范围之后精度就会不准确
+    string——字符串
+    boolean——布尔值 true false
+    null
+    undefined——未定义 一个变量声明之后没有赋值就是undefined
+    object——对象
+    在js里面null属于对象类型，但是它不具有很多对象的共性，所以很多资料将它归为单独一类数据类型null
+    */
+        // var a = 0.55; //number
+        // var a = "555"; //string
+        // var a = true;//boolean  true || false
+        // var a;
+        // var a = function () {
+        //     alert(1)
+        // };
+        // var a = [];//object
+        // var a = {};//object
+        var a = document.getElementById("box");
+        alert(typeof a);
+    </script>
+</body>
+</html>

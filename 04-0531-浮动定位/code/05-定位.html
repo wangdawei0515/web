@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+            position 定位
+            static 静态定位（没有定位），默认
+            relative 相对定位，相对于正常位置(原来没定位之前的位置)进行定位，还要占据位置
+            absolute 绝对定位，没有占据位置，使元素完全脱离文档流
+                     没有定位父级，则相对于整个文档发生偏移
+                     参考最近非static定位的父级进行定位
+            fixed    固定定位，相对于浏览器窗口进行定位
+            方向词
+                left
+                right
+                top
+                bottom
+            z-index 规定定位的层级（默认0）
+                值：number 值越大层级越高
+
+         */
+        div{
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            /*margin: 50px auto;*/
+        }
+        .box1{
+            position: relative;
+            top: 20px;
+            background: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

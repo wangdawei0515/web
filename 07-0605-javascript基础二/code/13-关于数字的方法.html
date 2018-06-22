@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        number数字
+            在js里面的小数和整数统一都是数字，-2^53-2^53，超出范围之后精度就会不准确
+        number方法
+            Number()——参数中必须能被转换成数字，否则返回NaN:
+            parseInt(解析的参数)——将参数转换为数字，整数部分遇到不是数字就停
+            parseFloat()——将参数转换为数字，不是数字就停，否则直到小数部分遇到不是数字就停
+             Num.toFixed(n)——四舍五入保留n位小数
+             NaN（Not a　Number）
+                NaN 不等于自己
+         */
+        // var a = "55";
+        // console.log(Number(a));
+        // console.log(typeof Number(a));
+        var a = "5q5.69a99";
+        console.log(parseInt(a));
+        console.log(parseFloat(a));
+
+        var c = 56.89;
+        console.log(c.toFixed());//57
+        console.log(c.toFixed(1));//56.9
+    </script>
+</body>
+</html>

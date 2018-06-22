@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background: #b864ff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <script>
+        /*
+         函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块
+         函数就是包裹在花括号中的代码块，前面使用了关键词 function：
+           有名函数
+                有名字的函数
+                    函数名加括号执行 / 充当事件函数执行
+           匿名函数
+                没有名字的函数
+                匿名函数不能单独出现 一般充当事件函数
+         */
+        var oBox1 = document.getElementById("box1");
+        var oBox2 = document.getElementById("box2");
+        // oBox1.onclick = function () {
+        //     alert(1);
+        // };
+        // oBox2.onclick = function () {
+        //     alert(1);
+        // };
+        function fn() {
+            alert(2);
+        }
+        // oBox1.onclick = fn;
+        // oBox2.onclick = fn;
+        fn();
+    </script>
+</body>
+</html>
