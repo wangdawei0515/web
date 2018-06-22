@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+    浮动的定义：使元素脱离文档流，按照指定（左右）方向发生移动，遇到父级边界或者相邻的浮动元素停下来。
+    文档流:是文档中可显示对象在排列时所占用的位置/空间（在页面中占位置）
+    脱离文档流 ：在页面中不占位置
+    清除浮动
+    1.给父级增加高度（不推荐使用）
+    2.给父级加overflow:hidden;
+    3.给父级加一个类
+    .clearfix:after{
+        content: "";
+        display: block;
+        clear: both;
+        }
+    浮动的特点
+    如果只给前面的元素浮动，后面的要占据他的位置
+    */
+        li{
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            margin-bottom: 50px;
+            list-style: none;
+            float: left;
+            border-radius: 5px 10px 15px 20px;
+            line-height: 50px;
+            text-align: center;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

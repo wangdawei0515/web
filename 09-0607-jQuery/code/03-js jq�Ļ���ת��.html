@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: #18ffd5;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>00001</p>
+        <p>00002</p>
+        <p>00003</p>
+        <p>00004</p>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        //js--->jq
+        // var oBox = document.getElementById("box");
+        // oBox.innerHTML = "888";
+        // $(oBox).html("qqq");//$()
+
+        //jq--->js   [] / get()
+        // var $p = $("#box p");
+        // $p.html("999");
+        // $p[2].innerHTML = "66666";
+        // $p.get(3).innerHTML = "8888";
+
+        //jq--->某个特定的jq  eq()
+        var $p = $("#box p");
+        $p.eq(1).html("99999");
+    </script>
+</body>
+</html>

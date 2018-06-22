@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background: #b864ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /*
+       行内样式标签属性：大部分情况下，js都是通过行内样式来达到修改样式的目的
+        */
+        //当我们需要修改单个属性的时候，我们一般都是直接.操作去修改元素的行内样式
+        var oBox = document.getElementById("box");
+        // oBox.style.width = "300px";
+        // oBox.style.height = "300px";
+        // oBox.style.cssText = "width: 300px;height: 300px;background: red;"
+
+        // 操作复合属性时，要注意用驼峰写法（去掉-号，-号后面的第一个单词大写）
+        // oBox.style.marginLeft = "20px";
+        // oBox.style["margin-top"] = "50px";
+
+        oBox.onmouseenter = function () {
+            this.style.background = "red";
+            this.style.width = "300px";
+            this.style.height = "300px";
+        }
+    </script>
+</body>
+</html>

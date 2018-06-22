@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #18ffd5;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="jquery.js"></script>
+    <script>
+        /*
+       delay 只对动画有用
+        */
+        /*$(document).click(function () {
+            // $("#box").delay(2000).fadeOut();
+            $("#box").delay(2000).css("background","red");
+        })*/
+        $("#box").delay(2000).queue(function () {
+            $(this).delay(2000).css("background","red");
+        })
+    </script>
+</body>
+</html>

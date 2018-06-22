@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    /*
+       string 字符串
+           索引、下标、偏移量——从0开始
+           str[index];——通过索引取字符串
+           str.length;——获取长度  空格也算
+           value.toString();——转换字符串
+           str.substring();——截取字符串 会比较参数值的大小，小的参数在前面,负数变为0
+           str.slice()——切片,不会交换位置，负数从右到左数
+           str.split()——字符串切割，返回数组  ******
+           str.indexOf——查找字符串，成功返回索引，反之返回-1 ******
+           str.toUpperCase()——全部转换大写
+           str.toLowerCase()——全部到小写
+        */
+    // var str = "wo shi shui";
+    // alert(str.length); //11
+    // alert(str[5]);//可读
+    // str[0] = "W";
+    // console.log(str);//只能读不能修改
+
+        // var str = "woshishuiwozaina";
+        // console.log(str.substring(2,5));//[2,5) shi
+        // console.log(str.substring(-3,5));//woshi
+        //  console.log(str.substring(8,3));//hishu
+        // console.log(str.slice(2,5));//[2,5) shi
+        // console.log(str.slice(-5,-2));//zai
+
+        var str = "woshishuiwozaina";
+        // console.log(str.split("i"));
+        // alert(str.indexOf("b")); //-1
+        // alert(str.indexOf("h")); //3
+        alert(str.indexOf("h",4));
+    </script>
+</body>
+</html>

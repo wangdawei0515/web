@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            background: #b864ff;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var len = aLi.length;
+        // alert(len);
+        // aLi[0].onclick = function () {
+        //     alert(0);
+        // };
+        // aLi[1].onclick = function () {
+        //     alert(1);
+        // };
+        // aLi[2].onclick = function () {
+        //     alert(2);
+        // };
+        // aLi[3].onclick = function () {
+        //     alert(3);
+        // };
+        // aLi[4].onclick = function () {
+        //     alert(4);
+        // }
+        for(var i = 0 ; i < len ; i ++){
+            // aLi[i].onclick = function () {
+            //     alert(i);//循环结束的i
+            // }
+            aLi[i].index = i;//index 自定义变量  a b c d
+            /*
+            * aLi[0].index = 0;
+            * aLi[1].index = 1;
+            * aLi[2].index = 2;
+            * aLi[3].index = 3;
+            * aLi[4].index = 4;
+            * */
+            aLi[i].onclick = function () {
+                alert(this.index);
+            }
+        }
+
+    /*
+      aLi[0].onclick = function () {
+                alert(i);
+                }
+        aLi[1].onclick = function () {
+        alert(i);
+        }
+        aLi[2].onclick = function () {
+        alert(i);
+        }
+        aLi[3].onclick = function () {
+        alert(i);
+        }
+        aLi[4].onclick = function () {
+        alert(i);
+        }
+    *
+    * */
+    </script>
+</body>
+</html>

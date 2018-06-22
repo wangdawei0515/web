@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /** {*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        input{
+            display: inline-block;
+            height: 30px;
+            width: 300px;
+        }
+        .box{
+            width: 148px;
+        }
+        .box1{
+            height: 36px;
+        }
+        #check{
+            width: 10px;
+            height: 10px;
+        }
+        label{
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <p>用户名&emsp;<input type="text" placeholder="&emsp;请输入你的用户名"></p>
+        <p>手机号&emsp;<input type="text" placeholder="&emsp;课用于登录和找回密码"></p>
+        <p>&emsp;密码&emsp;<input type="password" placeholder="&emsp;请输入你的用户名"></p>
+        <p>验证码&emsp;<input type="password" placeholder="&emsp;请输入验证码" class="box">
+            <input class="box box1" type="button" value="获取短信验证码">
+        </p>
+        <p>&emsp;&emsp;&emsp;<input type="checkbox" id="check">
+            <label for="check">阅读并接受《百度用户协议》及《百度隐私权保护声明》</label>
+        </p>
+        <p>&emsp;&emsp;&emsp;&emsp;<input type="button" value="注册"></p>
+    </form>
+</body>
+</html>

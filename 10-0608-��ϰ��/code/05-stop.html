@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+           overflow: hidden;
+        }
+        li{
+            width: 70px;
+            list-style: none;
+            font-size: 12px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            margin: 10px;
+            background: pink;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>南北</li>
+            <li>Lucky</li>
+            <li>which</li>
+            <li>小泼</li>
+        </ul>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        /*
+      stop
+            清空动画队列，可以接受两个布尔值参数
+            第一个不用管
+            第二个决定是否瞬间到达队列终点，true 到   false(默认) 不到
+     */
+        $("#box ul li").hover(function () {
+            $(this).stop(true,true).animate({"height": "400px"});
+        },function () {
+            $(this).stop(true,true).animate({"height": "35px"});
+        })
+    </script>
+</body>
+</html>

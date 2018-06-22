@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        div span{
+            color: red;
+            font-size: 20px;
+        }
+        div p{
+            font-size: 20px;
+            color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">敌军还有<span id="time">30</span>秒到达战场</div>
+    <div id="wrap"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        var oTime = document.getElementById("time");
+        var oWrap = document.getElementById("wrap");
+        var num = 30;
+        var time;
+        time = setInterval(function () {
+            num --;
+            oTime.innerHTML = num;
+            if(num === 1){
+                oBox.innerHTML = "<p>全军出击！！！！！</p>";
+                clearInterval(time);
+            }
+            // console.log(num);
+        },1000);
+
+        function change() {
+            var data = new Date();
+            var year = data.getFullYear();
+            var month = data.getMonth()+1;
+            var date = data.getDate();
+            var hour = data.getHours();
+            var min = data.getMinutes();
+            var sec = data.getSeconds();
+
+            hour = toTwo(hour);
+            min = toTwo(min);
+            sec = toTwo(sec);
+
+            function toTwo(n) {
+                if(n<10){
+                    n = "0" + n;//01 02 03 04 05 06 07 08 09
+                }
+                return n;
+            }
+            oWrap.innerHTML = year + "年"+ month + "月"+ date + "日"+ hour+ "时"+ min+ "分"+ sec+ "秒";
+        }
+        change();
+        setInterval(change,1000);
+    </script>
+</body>
+</html>

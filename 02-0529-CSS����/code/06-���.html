@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*li{*/
+            /*width: 50px;*/
+            /*height: 50px;*/
+            /*background: aqua;*/
+        /*}*/
+        /*div ul li{*/
+            /*width: 50px;*/
+            /*height: 50px;*/
+            /*background: aqua;*/
+        /*}*/
+        /*ol.box li{*/
+        ol[class=box] li{
+            width: 50px;
+            height: 50px;
+            background: aqua ;
+            /*12*/
+        }
+        #box{
+            background: black;
+        }
+        ol li.wrap{
+            background: black;
+            /*12*/
+        }
+    </style>
+</head>
+<body>
+    <!--
+    复杂后代选择器
+    1.先比id(最高位)  class（中间位） tagName（个数位）
+            1                 2           3
+    2.id选择器个数不相等，id越多，优先级越高
+    3.id选择器个数相同,则看class,class多的优先级高
+    4.class个数相等，就看tagName个数
+    -->
+    <div>
+        <ul class="box">
+            <li id="box" style="background: red">ul1</li>
+            <li>ul2</li>
+            <li>ul3</li>
+            <li>ul4</li>
+        </ul>
+        <ol class="box">
+            <li>ol1</li>
+            <li>ol2</li>
+            <li class="wrap">ol3</li>
+        </ol>
+    </div>
+    <ul>
+        <li>ul1</li>
+        <li>ul2</li>
+        <li>ul3</li>
+        <li>ul4</li>
+    </ul>
+    <ol>
+        <li>ol1</li>
+        <li>ol2</li>
+        <li>ol3</li>
+    </ol>
+</body>
+</html>

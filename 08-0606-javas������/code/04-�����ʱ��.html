@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid red;
+            text-align: center;
+        }
+        span{
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>还有<span id="time">5s</span>我就去百度啦</p>
+    </div>
+    <script>
+        var oTime = document.getElementById("time");
+        var oBox = document.getElementById("box");
+        var num = 5;
+        var timer;
+        timer = setInterval(function () {
+            num --;
+            oTime.innerHTML = num + "s";
+            if(num === 1){
+                clearInterval(timer);
+                // clearTimeout();
+            }
+        },1000)
+    </script>
+</body>
+</html>

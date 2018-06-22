@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Which">
+  <title>ajax</title>
+  <style>
+    body {
+      margin: 0;
+      color: #333;
+    }
+
+    header, footer, section, article, aside, nav, figure {
+      display: block
+    }
+
+    ul, ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    p, dl, dd {
+      margin: 0;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-size: 100%;
+    }
+
+    img {
+      border: none;
+    }
+
+    a {
+      color: #21a557;
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    em, i {
+      font-style: normal;
+    }
+
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      border-spacing: 0;
+    }
+
+    th, td {
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<!--
+1、AjAX 必须在服务器环境才有效果
+2、Ajax 不能跨域
+-->
+<!--<p>-->
+<!--<input type="text" id="username">-->
+<!--</p>-->
+<!--<p>-->
+<!--<input type="password" id="password">-->
+<!--</p>-->
+<!--<p id="errorTip"></p>-->
+<button id="btn">点击</button>
+<ul id="list" style="width: 200px;border: 1px solid #000;">
+  <li>1111</li>
+</ul>
+
+
+<div style="width: 20px;height: 30px;float: right;background: #000;"></div>
+<!-- 引入jq -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+  //   let btnDom = document.getElementById('btn');
+  //   btnDom.onclick = function () {
+  // //  创建对象 ie 678
+  //     let xhr = new XMLHttpRequest();
+  //     // method  url  async
+  //     xhr.open('get', '/ajax?username=which&password=555', true);
+  //     // 设置一个请求头
+  //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  //     xhr.send(); // post 通过send发送数据
+  //     // 浏览器一般会默认缓存get请求 1. 时间戳/随机数  2. post
+  //     xhr.onreadystatechange = function () {
+  //       // readyState 5
+  //       // 0  没有启动 open之前
+  //       // 1  初始化  open之后
+  //       // 2  发动请求  send 之后
+  //       // 3  响应  有一部分数据接收
+  //       // 4  完成  数据全部接收
+  //       if (xhr.readyState === 4 && xhr.status === 200) {
+  //         alert(xhr.status); // 成功后执行的
+  //       } else {
+  //          失败后 执行的
+  //         alert(xhr.status + '===' + xhr.statusText);
+  //       }
+  //     }
+  //   }
+</script>
+<script>
+  // let $btn = $('#btn');
+  // $btn.click(function () {
+  //   $.ajax({
+  //     "method": "post",
+  //     "url": "/ajax",
+  //     "data": {
+  //       // value 是 js   jq val  js对象和jq对象
+  //       username: $('#username').val(),
+  //       password: $('#password').val()
+  //     },
+  //     "success": function (data) {
+  //       console.log('success');
+  //       // console.log(data);
+  //       $('#errorTip').html(data)
+  //     },
+  //     "error": function (error) {
+  //       console.log('error');
+  //       console.log(error); // 是一个对象
+  //       console.log(error.readyState);
+  //       console.log(error.statusText);
+  //     }
+  //   });
+  //   // get/post
+  //   $.get({
+  //     "url": "",
+  //     "data": {},
+  //     "success": function (data) {},
+  //     "error": function (error) {
+  //     }
+  //   })
+  // });
+</script>
+<script>
+  // 获取 get   提交用post
+  $('#btn').click(function () {
+    $.get({
+      "url": "/data",
+      // "data" //有必要吗？
+      "success": function (data) {
+        console.log('success');
+        // console.log(data);
+        let articles = data["articles"];
+        for(let i=0;i<articles.length;i++){
+          // console.log(articles[i]);
+          let articleTitle =articles[i]["title"];
+          // console.log(articleTitle);
+          let $li = '<li>'+articleTitle+'</li>';
+          $('#list').append($li);
+        }
+      },
+      "error": function (error) {
+        console.log("error");
+        console.log(error);
+      }
+    }) // ==> $.ajax({"method":"get"})
+  });
+
+</script>
+</body>
+</html>

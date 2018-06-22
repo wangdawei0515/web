@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background: #18ffd5;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <p></p>
+    <!--<script src="jquery.js"></script>-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script>
+        /*
+        http://www.bootcdn.cn  引入jq
+        http://jquery.cuishifeng.cn  中文
+        http://api.jquery.com 官网
+
+        jQuery
+        是什么：
+            jQuery是一种新的JavaScript库。
+        jq是用js写 能用jq实现的 用js都能实现
+        js能实现的 jq有些不能实现
+
+        jQuery $
+        传字符串/选择器/尖括号标签的形式/函数/object
+        jq的API只对自己开放 jq不能用js的API js也不能用jq的API
+         */
+
+        // $(function () {
+        //     alert(1)
+        // });
+        var oBox = document.querySelector("#box");
+        // oBox.innerHTML = "666";
+        $(oBox).html("555");
+         // var $box = $("#box");//$box是你自己定义的变量
+         // $box.html("888");
+        // $box.innerHTML = "999";
+        // $box.html("<b>999</b>");
+
+       $("p").html("888");
+
+    </script>
+</body>
+</html>

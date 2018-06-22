@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        div{
+            width: 1226px;
+            height: 460px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+        }
+        div .tab{
+            overflow: hidden;
+            border: 1px solid red;
+            width: 120px;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 20px;
+            right: 50px;
+        }
+        div .tab li{
+            width: 10px;
+            height: 10px;
+            background: #b864ff;
+            float: left;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        div .btn li{
+            width: 50px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: #ddd;
+            font-size: 25px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+        }
+        div .btn li.left{
+            left: 234px;
+        }
+        div .btn li.right{
+            right: 0;
+        }
+        div .list{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 234px;
+            /*height: 460px;*/
+            background: #333;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        div .list li{
+            padding-left: 30px;
+            line-height: 42px;
+            height: 42px;
+        }
+        div .list li:hover{
+            background: #ffa31e;
+            cursor: pointer;
+        }
+        div .list li a{
+            text-decoration: none;
+            color: white;
+        }
+        div .list li a span{
+            position: absolute;
+            left: 200px;
+        }
+        div .list li.item1 div{
+            width: 800px;
+            height: 460px;
+            background: #b864ff;
+            position: absolute;
+            top: -50px;
+            left: 234px;
+            z-index: 2;
+            display: none;
+        }
+        div .list li.item1:hover div{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="http://i1.mifile.cn/a4/xmad_15277566791601_pEzCs.jpg" width="1226" height="460">
+        <ul class="list">
+            <li class="item1"><a href="#">手机 电话卡 <span>&gt;</span></a>
+                <div>
+                </div>
+            </li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+            <li><a href="#">手机 电话卡 <span>&gt;</span></a></li>
+        </ul>
+        <ul class="tab">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="btn">
+            <li class="left">&lt;</li>
+            <li class="right">&gt;</li>
+        </ul>
+    </div>
+</body>
+</html>

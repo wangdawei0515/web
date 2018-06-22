@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            width: 520px;
+            height: 280px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box .pic li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #box .pic li.show{
+            display: block;
+        }
+        #box .tab{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 20px;
+            background: #18ffd5;
+            border-radius: 20px;
+        }
+        #box .tab li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 5px;
+            /*background: #b864ff;*/
+            float: left;
+            background: #eee;
+        }
+        #box .tab li:hover{
+            cursor: pointer;
+        }
+        #box .tab li.on{
+            background: red;
+        }
+        #box .btn li{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #eee;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            color: #fff;
+            display: none;
+        }
+        #box:hover .btn li{
+            display: block;
+        }
+        #box .btn li:hover{
+            cursor: pointer;
+            background: #ddd;
+        }
+        #box .btn li.left{
+            left: -2px;
+            border-radius: 0 50% 50% 0;
+        }
+        #box .btn li.right{
+            right: -2px;
+            border-radius: 50% 0 0 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="pic">
+            <li><img src="https://img.alicdn.com/tfs/TB1m_Q_vN9YBuNjy0FfXXXIsVXa-520-280.jpg_q90_.webp" alt=""></li>
+            <li><img src="https://img.alicdn.com/tfs/TB1jYXMwntYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+            <li><img src="https://aecpm.alicdn.com/tps/i1/TB1r4h8JXXXXXXoXXXXvKyzTVXX-520-280.jpg" alt=""></li>
+            <li><img src="https://img.alicdn.com/simba/img/TB1k54Wr1uSBuNjSsziSuvq8pXa.jpg" alt=""></li>
+            <li><img src="https://img.alicdn.com/tfs/TB1qI1Kv_tYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+        </ul>
+        <ul class="tab">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="btn">
+            <li class="left">&lt;</li>
+            <li class="right">&gt;</li>
+        </ul>
+    </div>
+    <script>
+        var aPicLi = document.querySelectorAll("#box .pic li");
+        var aTabLi = document.querySelectorAll("#box .tab li");
+        var aBtnLi = document.querySelectorAll("#box .btn li");
+        var len = aPicLi.length;
+        var first = 0;
+        // alert(len);
+
+        //初始化
+        aPicLi[0].className = "show";
+        aTabLi[0].className = "on";
+
+        //tab点击
+        for(var i = 0 ; i < len ; i ++){
+            aTabLi[i].index = i;
+            aTabLi[i].onclick = function () {
+                aTabLi[first].className = "";
+                aPicLi[first].className = "";
+                first = this.index;
+                aTabLi[first].className = "on";
+                aPicLi[first].className = "show";
+            }
+        }
+
+        //btn点击  0  1
+        for(var j = 0 ; j < 2 ; j ++){
+            if(j){
+                aBtnLi[j].onclick = function () {
+                    aTabLi[first].className = "";
+                    aPicLi[first].className = "";
+                    first ++;
+                    first %= 5;
+                    aTabLi[first].className = "on";
+                    aPicLi[first].className = "show";
+                }
+            }else{
+                aBtnLi[j].onclick = function () {
+                    aTabLi[first].className = "";
+                    aPicLi[first].className = "";
+                    first --;
+                    if(first < 0)first = len-1;
+                    aTabLi[first].className = "on";
+                    aPicLi[first].className = "show";
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>

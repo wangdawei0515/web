@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!--<b>888</b>-->
+    <div id="box">666</div>
+    <script src="jquery.js"></script>
+    <script>
+        /*
+           添加兄弟元素
+           after
+           before
+
+           insertAfter
+           insertBefore
+        */
+        $("#box").before("<b>888</b>");
+        $("#box").after("<b>999</b>");
+    </script>
+</body>
+</html>

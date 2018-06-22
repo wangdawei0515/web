@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <ul>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        // var aLi = document.getElementsByTagName("li");
+        // console.log(aLi.length);
+
+        var oBox = document.getElementById("box");
+        var aLi = oBox.getElementsByTagName("li");
+        console.log(aLi.length);
+
+        /*
+        定义变量规则：
+            1.不能使用关键字或者保留字,（js里面已经赋予他有意义的词，或者留着备用的词）
+            2.只能包含 数字 字母 $ _ 并且不能以数字开头
+            3.严格区分大小写
+            4.尽量见名知意
+
+            用 ，号可以让一个var定义多个变量
+            var变量时并不要求立马赋值
+         */
+
+        /*
+      注释里面是没有要求的
+      1.严格区分大小写 alert才是js本身自带的，Alert不是自带的
+      2.语句字符必须是英文符号
+      3.某些完整的语句后面需要分号
+      4.引号里面代表字符串，所以不需要满足上面的条件
+       */
+        // var a, b, c;
+    </script>
+</body>
+</html>

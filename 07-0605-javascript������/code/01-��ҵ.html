@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            display: inline-block;
+            width: 150px;
+            height: 25px;
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+        input[type=button]{
+            margin-left: 65px;
+        }
+        div{
+            width: 200px;
+            height: 150px;
+            background: #c4ff7b;
+            line-height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    属&emsp;性：<input type="text" placeholder="请输入你的css属性" id="key"><br>
+    属性值：<input type="text" placeholder="请输入你的css属性值" id="keyword"><br>
+    <input type="button" value="设置属性" id="btn"><br>
+    <div id="con">我就是我</div>
+    <script>
+        var oKey = document.getElementById("key"),
+            oKeyword = document.getElementById("keyword"),
+            oBtn = document.getElementById("btn"),
+            oCon = document.getElementById("con");
+        oBtn.onclick = function () {
+            var key = oKey.value;
+            var keyword = oKeyword.value;
+            // console.log(key);
+            // console.log(keyword);
+            oCon.style[key] = keyword;
+        };
+        oCon.onmouseenter = function () {
+            this.innerHTML = "我被鼠标移入啦";
+        };
+        oCon.onmouseleave = function () {
+            this.innerHTML = "我被鼠标移出啦";
+        };
+    </script>
+</body>
+</html>

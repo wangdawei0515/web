@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        margin 外边距 元素与其他元素的距离（边框以外的距离）
+        一个值的时候： 代表四个方向值一样 上右下左（顺时针）
+         二个值的时候： 上下  右左
+         三个值的时候： 上 右左 下
+         四个值的时候： 上  右  下 左
+         margin: auto; 快速左右居中
+         垂直方向： margin-bottom,margin-top   取两者之间的较大值
+         水平方向： margin-left,margin-right   取两者的和
+         overflow:hidden; 解决内边距重叠问题
+         */
+        div{
+            width: 300px;
+            height: 200px;
+            background: antiquewhite;
+            /*border: 1px solid red;*/
+            /*margin: 50px;*/
+            /*margin: auto;*/
+            /*display: inline-block;*/
+            overflow: hidden;
+        }
+        .box{
+            /*margin-top: 100px;*/
+        }
+        p{
+            width: 50px;
+            height: 50px;
+            background: aqua;
+            /*margin: 100px;*/
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+    <div class="box"></div>
+</body>
+</html>

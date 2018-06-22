@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            width: 520px;
+            height: 280px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box .pic li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        /*#box .pic li.show{*/
+            /*display: block;*/
+        /*}*/
+        #box .tab{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 20px;
+            background: #18ffd5;
+            border-radius: 20px;
+        }
+        #box .tab li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 5px;
+            /*background: #b864ff;*/
+            float: left;
+            background: #eee;
+        }
+        #box .tab li:hover{
+            cursor: pointer;
+        }
+        #box .tab li.on{
+            background: red;
+        }
+        #box .btn li{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #eee;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            color: #fff;
+            display: none;
+        }
+        #box:hover .btn li{
+            display: block;
+        }
+        #box .btn li:hover{
+            cursor: pointer;
+            background: #ddd;
+        }
+        #box .btn li.left{
+            left: -2px;
+            border-radius: 0 50% 50% 0;
+        }
+        #box .btn li.right{
+            right: -2px;
+            border-radius: 50% 0 0 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="pic">
+            <li><img src="https://img.alicdn.com/tfs/TB1m_Q_vN9YBuNjy0FfXXXIsVXa-520-280.jpg_q90_.webp" alt=""></li>
+            <li><img src="https://img.alicdn.com/tfs/TB1jYXMwntYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+            <li><img src="https://aecpm.alicdn.com/tps/i1/TB1r4h8JXXXXXXoXXXXvKyzTVXX-520-280.jpg" alt=""></li>
+            <li><img src="https://img.alicdn.com/simba/img/TB1k54Wr1uSBuNjSsziSuvq8pXa.jpg" alt=""></li>
+            <li><img src="https://img.alicdn.com/tfs/TB1qI1Kv_tYBeNjy1XdXXXXyVXa-520-280.jpg_q90_.webp" alt=""></li>
+        </ul>
+        <ul class="tab">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="btn">
+            <li class="left">&lt;</li>
+            <li class="right">&gt;</li>
+        </ul>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        (function () {
+            var $box = $("#box"),
+                $picLi = $("#box .pic li"),
+                $tabLi = $("#box .tab li"),
+                $btnLi = $("#box .btn li"),
+                len = $tabLi.length,
+                timer;
+                first = 0;
+
+            //初始化设置
+            $picLi.hide().eq(0).show();//隐藏$picLi 然后显示第一个
+            $tabLi.eq(0).addClass("on");
+
+            //tab区域
+            $tabLi.click(function () {
+                var x = $(this).index();//tabLi[i].index = i;
+                if(x != first){
+                     change(x);
+                }
+            });
+
+            //btn区域
+            $btnLi.click(function () {
+                var x = first;
+                if($(this).index()){ //这里的index()就0 1两个值
+                    x++;
+                    x %= len;
+                }else{
+                    x --;
+                    if(x<0)x = len-1;
+                }
+                change(x);
+            });
+
+
+            //自动轮播
+            auto();
+
+            $box.hover(function () {
+                clearInterval(timer);
+            },auto);
+
+            function auto() {
+               timer = setInterval(function () {
+                    var x = first;
+                    x++;
+                    x %= len;
+                    change(x);
+                },3000)
+            }
+
+            //变化函数
+            function change(i) {
+                $picLi.eq(first).fadeOut(2000);
+                $tabLi.eq(first).removeClass("on");
+                first = i;
+                $picLi.eq(first).fadeIn(2000);
+                $tabLi.eq(first).addClass("on");
+            }
+        })();
+    </script>
+</body>
+</html>

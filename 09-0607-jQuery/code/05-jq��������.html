@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        p.on{
+            font-size: 18px;
+            color: red;
+        }
+        p.show{
+            font-size: 25px;
+            color: #18ffd5;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box1">
+        <p class="on">1</p>
+        <p>2</p>
+        <p class="show">3</p>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+        /*
+            attr 设置/获取 标签属性
+            prop 设置/获取 标签属性  废除
+
+            removeAttr()  移除标签属性
+            removeProp()   废除
+
+            addClass
+            removeClass
+                传class 移除你传的那个
+                没有  移除全部
+            toggleClass 有就删没有则加
+            操作class类名
+
+             jq      js
+            html()  innerHTML
+            text()  innerText
+            val()   value
+
+            在jq里面，设置某个值的时候，一般自带遍历
+                      获取某个值的时候，一般获取第一个
+         */
+        var $box = $("#box");
+        // alert($box.attr("class"));//读操作
+        // $box.attr("class","xiaopo");//写操作
+        // $box.attr("tz","py");//写操作
+        // $box.removeAttr("class");
+        $box.addClass("box2");
+        $box.addClass("box3 box4");
+        $box.removeClass("box4");
+        $box.removeClass();
+
+        $("#box p").toggleClass("show");
+
+        alert($("#box p").html());
+    </script>
+</body>
+</html>

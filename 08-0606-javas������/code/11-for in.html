@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var obj = {"name": "小泼","age":"18","gender":"girl"};
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj.length);//undefined
+
+        for(var key in obj){
+            // console.log(key);
+            console.log(key,obj[key]);
+            //key是{}里的属性名称 obj[key] {}里面属性的值
+        }
+    </script>
+</body>
+</html>

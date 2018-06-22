@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background: #b864ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+         /*
+      所谓事件，是指 JavaScript 捕获到用户的操作，并做出正确的响应。
+      在事件函数里面，有一个关键字this，代表当前触发事件的这个元素
+      事件：用户的操作
+      元素.事件 = 函数；
+      鼠标事件：
+          左键单击 onclick
+          左键双击 ondblclick
+          鼠标移入 onmouseover/onmouseenter ***
+          鼠标移出 onmouseout/onmouseleave ***
+       */
+        var oBox = document.getElementById("box");
+        oBox.onclick = function () {
+            alert("我被点击了");
+        };
+        oBox.onmouseenter = function () {
+            console.log("我被鼠标移入啦");
+            this.innerHTML = "<h1>1</h1>";
+            // oBox.innerHTML = "<h1>1</h1>";
+        };
+        oBox.onmouseleave = function () {
+            console.log("我被鼠标移出啦");
+        }
+    </script>
+</body>
+</html>

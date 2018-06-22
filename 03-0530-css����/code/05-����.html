@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+      background-color 背景色
+      background-image 背景图片
+      background-repeat 背景平铺
+           repeat 平铺 默认
+           repeat-x  平铺x
+           repeat-y  平铺y
+           np-repeat  不平铺
+           注意：只有背景图片的宽高小于被设置的元素的宽高，才会有平铺效果
+
+     background-position 背景位置 x轴 y轴
+        x轴 left center right
+        y轴 top center bottom
+        如果只给一个值，默认在x轴，y轴默认center(50%)
+        % px
+
+    background-size 背景大小
+    % px
+    给一个值的时候，默认x轴，y轴默认auto auto会等比缩放
+    cover 等比例缩放直到铺满x,y轴 可以铺满整个框 但是不一定能看到完整的图片
+    contain 等比例缩放x轴或者y轴其中的一个方向 不一定铺满 但是可以看到整个图片
+   */
+        div{
+            width: 520px;
+            height: 700px;
+            border: 1px solid red;
+            background-color: aqua;
+            background-image: url("img/0.jpg");
+            background-repeat: no-repeat;
+            /*background-position: 10px 50%;*/
+            /*background-size: 180px 176px;*/
+            /*background-size: cover;*/
+            /*background-size: contain;*/
+            /*background: aqua url("img/0.jpg") no-repeat 10px center/300px 298px;*/
+            /*background: color image repeat position/size*/
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #btn ul{
+            overflow: hidden;
+        }
+        #btn ul li{
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background: #c4ff7b;
+            color: red;
+            font-size: 13px;
+            float: left;
+            margin: 20px 20px 20px 0;
+        }
+        #btn ul li:hover{
+            cursor: pointer;
+        }
+        #pic{
+            width: 500px;
+            height: 333px;
+            border: 1px solid red;
+            position: relative;
+        }
+        #pic ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #pic ul li.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!--div#btn>ul>li{修改$}*4-->
+    <div id="btn">
+        <ul>
+            <li>修改1</li>
+            <li>修改2</li>
+            <li>修改3</li>
+            <li>修改4</li>
+        </ul>
+    </div>
+    <div id="pic">
+        <ul>
+            <li class="show"><img src="http://v1.qzone.cc/pic/201303/28/14/53/5153e8d17cfcf830.jpg!600x600.jpg" alt=""></li>
+            <li><img src="http://v1.qzone.cc/pic/201303/28/14/53/5153e8d397229822.jpg!600x600.jpg" alt=""></li>
+            <li><img src="http://v1.qzone.cc/pic/201303/28/14/53/5153e8d4453e7723.jpg!600x600.jpg" alt=""></li>
+            <li><img src="http://v1.qzone.cc/pic/201303/28/14/53/5153e8d65189f872.jpg!600x600.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var aBtn = document.querySelectorAll("#btn ul li");
+        var aPic = document.querySelectorAll("#pic ul li");
+        var len = aPic.length;
+        var first = 0;
+        // alert(len);
+        for(var i = 0 ; i <len ; i ++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function () {
+                aPic[first].className = "";//让点击之前显示的图片隐藏
+                first = this.index;//把当前点击的下标赋值给first
+                aPic[first].className = "show";//当前点击的下标 加上className
+            }
+        }
+    </script>
+</body>
+</html>

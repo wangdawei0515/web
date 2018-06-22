@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #c4ff7b;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">666</div>
+    <p class="box1">1</p>
+    <p class="box1">2</p>
+    <p class="box1">3</p>
+    <p class="box1">4</p>
+    <div id="wrap">
+        <i class="box2">iiiii1</i>
+        <p class="box3">
+            <i>iiiiii2</i>
+        </p>
+    </div>
+    <script>
+        /*
+       那么JS如何操作页面：
+           其实，要操作页面，就是操作标签，JS要操作标签，就要先获取标签
+       js如何获取独有标签
+           document.title
+           document.head
+           document.body
+
+       其他标签的获取，id前面必须是document,其他的前面可以是某个元素(id,document)，但不能是集合
+               通过id获取元素，
+                   document.getElementById()
+               通过className获取元素(不支持IE8及以下)
+                   .getElementsByClassName()
+               通过标签名获取元素
+                   .getElementsByTagName()
+
+               通过选择器的写法获取元素（不兼容IE7及以下）
+                   .querySelector()
+                   .querySelectorAll()
+               通过name值获取
+                    document.getElementsByName（）
+        */
+        document.title = "666";
+        //修改别的标签的内容，得用innerHTML(会解析标签)，innerText（不会解析标签）
+        // document.body.innerHTML = "888";
+
+        //获取的是确切的某个元素，可以直接操作这个元素
+        // var oBox = document.getElementById("box");
+        // console.log(oBox);
+        // // oBox.innerHTML += "888";
+        // //  oBox.innerHTML = "<h1>888</h1>";
+        // oBox.innerText = "<h1>888</h1>"
+
+        //获取的是一堆元素的集合，设置操作的时候要通过下标（索引、序号）拿到对应的某一个
+        // var aP = document.getElementsByClassName("box1");
+        // aP[0].innerHTML = "666";
+        // console.log(aP.length);
+
+        // var aP = document.getElementsByTagName("p");
+        // aP[0].innerHTML = "666";
+
+        //获取第一个对应的元素
+        // var oI = document.querySelector("#wrap i");
+        // oI.innerHTML += "888";
+
+        var oI = document.querySelectorAll("#wrap i");
+        console.log(oI.length);
+        oI[0].innerHTML += "999";
+    </script>
+</body>
+</html>
